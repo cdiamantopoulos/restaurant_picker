@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   get "/logout" => "sessions#destroy", as: :logout
   root 'home#index'
 
-  resources :microposts
-
   get "/page_not_found", to: 'static_pages#pagenotfound'
   get '*path' => redirect('/page_not_found')
 end

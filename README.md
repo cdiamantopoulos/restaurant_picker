@@ -1,27 +1,19 @@
 General Overview:
 
-Fake Twitter. This is an idea that was taken from the Michael Hartl tutorial but has completely original code. Some of the HTML/CSS was taken from the tutorial but the implementation of models and controllers are all my own.
-So far the functionality includes creating a user, signing in, creating and deleting microposts.
-I added a Session model to store the concept of a session in the DB. 
-There are feature files and implementation written within the features/ folder.
+Restaurant Lunch Picker. This is an idea that has spawned while discussing lunch options at work. We certainly haven't been the first, and we won't be the last. The goal of this project is to get random lunch options when nobody can decide what to eat.
 
-TODO items:
-
-Switch to Postgres
-Implement rspec
-Maybe Add Mailers
-Implement relationships to follow other users
+Current Features:
+* Add Restaurant
+* Delete Restaurant
+* Restaurant List
 
 
-Notes:
+Features to Implement:
 
-One thing I don't like too much is the current_user method in the Application Controller. I would like a better way of doing this but I have not gotten to it.
+* Random Restaurant
+  * This should be able to return an amount of options based on input, whether or not we want a quick or sitdown lunch, and approximate price we feel like spending.
+* I think that's it for now. Anything else we decide on.
 
-Email/Username is case sensitive right now.
-
-
-To Run:
-
-Suggest doing a bundle install --path ./gems and kicking off server from a bundle exec.
-
-I would have included the gems but the file was too large to send over email when the gems were included.
+Misc TODO: 
+* Write tests
+* Create API for a HipChat bot

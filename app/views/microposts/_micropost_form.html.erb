@@ -1,6 +1,0 @@
-<%= form_tag(microposts_path, :method => 'post') do |f| %>
-	<div class="form">
-    <%= text_area(:content, params[:content], id: "micropost-form", placeholder: "Compose micropost...") %>
-  </div>
-  <button type="submit" class="btn btn-primary">Post</button>
-<% end %>

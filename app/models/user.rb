@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
 	## Database relationships
 	##
 	has_many :sessions
-	has_many :microposts
 
 	##
 	## Validations
