@@ -1,0 +1,24 @@
+<%= render 'layouts/logged_out_header' %>
+<h1>Sign Up</h1>
+<div align = "center">
+<%=form_for signup_path do |f| %>
+<%=f.label :name %>
+</br>
+<%=f.text_field :name %>
+</br>
+<%=f.label :email %>
+</br>
+<%=f.text_field :email %>
+</br>
+<%=f.label :password %>
+</br>
+<%=f.password_field :password %>
+</br>
+<%=f.label :password_confirmation, "Confirmation" %>
+</br>
+<%=f.password_field :password_confirmation %>
+</br>
+<%=f.submit "Sign Up", class: "btn btn-large btn-primary" %>
+<%end%>
+
+</div>

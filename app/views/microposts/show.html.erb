@@ -1,0 +1,7 @@
+<% if @micropost %>
+	<div align="center"><h3><%= @micropost.content %></h3></div>
+<% else %>
+	<meta HTTP-EQUIV="REFRESH" content="3; url=/">
+	<div align="center"><h3>Micropost does not exist</h3></div>
+	<div align="center"><h2>Redirecting back to account...</h2></div>
+<% end %>

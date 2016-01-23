@@ -1,0 +1,29 @@
+<%= render 'layouts/logged_in_header' %>
+<% provide(:title, @current_user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for(@current_user) %>
+        <%= @current_user.name %>
+      </h1>
+    </section>
+    <section class="micropost_form" align="center">
+        <%= render 'microposts/micropost_form' %>
+    </section>
+  </aside>
+  <div class="col-md-8 pull-right">
+    <% if @current_user.microposts.any? %>
+      <h3>Microposts - <%= @current_user.microposts.count %></h3>
+      <ol class="microposts">
+        <%= render @current_user.microposts %>
+      </ol>
+    <% else %>
+      <div class="microposts" align="center">
+      <h3>Currently no posts...</h3>
+      <h2>Add a post!</h2>
+      </div>
+    <% end %>
+  </div>
+  <div class="clearfix"></div>
+</div>
