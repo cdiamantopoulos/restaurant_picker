@@ -1,6 +1,10 @@
 <%= render 'layouts/logged_out_header' %>
+
 <h1>Sign Up</h1>
 <div align = "center">
+<% flash.each do |key, value| %>
+  <div class="alert-temp alert fade in alert-<%= key %>"><%= value %></div>
+<% end %>
 <%=form_for signup_path do |f| %>
 <%=f.label :name %>
 </br>

@@ -1,5 +1,12 @@
 <%= render 'layouts/logged_out_header' %>
+
+
+
 <div align = "center">
+
+<% flash.each do |key, value| %>
+  <div class="alert-temp alert fade in alert-<%= key %>"><%= value %></div>
+<% end %>
 
 <h1>Log In</h1>
 <%=form_tag login_path do%>

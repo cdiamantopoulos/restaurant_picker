@@ -1,2 +1,6 @@
 <%= render 'layouts/logged_out_header' %>
 <h1>Restaurant Picker</h1>
+
+<% flash.each do |key, value| %>
+  <div class="alert-temp alert fade in alert-<%= key %>"><%= value %></div>
+<% end %>
