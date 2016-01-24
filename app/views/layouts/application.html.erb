@@ -8,12 +8,6 @@
 </head>
 <body>
 
-<div id="notice" align="center">
-  <% flash.each do |key, value| %>
-       <div class="alert-temp alert fade in alert-<%= key %>"><%= value %></div>
-  <% end %>
-</div>
-
 <%= yield %>
 
 </body>

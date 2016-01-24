@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy", as: :logout
   root 'home#index'
+  resources :restaurants
 
-  get "/page_not_found", to: 'static_pages#pagenotfound'
+  #page not found stuff
+  get "/page_not_found", to: 'home#page_not_found'
   get '*path' => redirect('/page_not_found')
+
 end

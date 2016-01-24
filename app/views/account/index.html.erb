@@ -8,6 +8,32 @@
         <%= @current_user.name %>
       </h1>
     </section>
+    <div align="center" style="border: 2px solid green; border-radius: 25px; padding: 20px">
+      <h2><span class="label label-default">Add a Restaurant!</span></h2>
+      <%= render 'restaurants/form' %>
+      </br>
+      <% if flash[:create] %>
+        <div class="alert-temp alert fade in alert-success"><%= flash[:create] %></div>
+      <% end %>
+    </div>
+
+    </br>
+    <div align="center" style="border: 2px solid green; border-radius: 25px; padding: 20px">
+      <h2><span class="label label-default">Restaurant List</span></h2>
+
+
+      <% @restaurants.each do |restaurant| %>
+        <%= restaurant.name %> - ~$<%= restaurant.price %>
+        <%= link_to "delete", restaurant, method: :delete,
+                                       data: { confirm: "You sure?" } %> </br>
+      <% end %>
+
+
+
+      <% if flash[:destroy] %>
+        <div class="alert-temp alert fade in alert-info"><%= flash[:destroy] %></div>
+      <% end %>
+    </div>
   </aside>
   </div>
   <div class="clearfix"></div>
