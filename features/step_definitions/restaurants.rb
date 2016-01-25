@@ -26,3 +26,19 @@ end
 Then(/^I see the Restaurant "([^"]*)" in the Restaurant list$/) do |txt|
   expect(page).to have_content txt
 end
+
+Given(/^I have a restaurant named "(.*?)"$/) do |name|
+  fill_in 'restaurant_name', with: "#{name}"
+  fill_in 'restaurant_price', with: "10"
+  find_button("Add!").click
+  expect(page).to have_content name
+end
+
+When(/^I delete the restaurant named "(.*?)"$/) do |name|
+  find_link("delete").click
+end
+
+Then(/^I no longer see the restaurant named "(.*?)"$/) do |name|
+  expect(page).to_not have_content name
+end
+
