@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 	## Database relationships
 	##
 	has_many :sessions
+  has_many :memberships
+  has_many :groups, :through => :memberships
 
 	##
 	## Validations

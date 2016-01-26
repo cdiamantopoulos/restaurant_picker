@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get "/logout" => "sessions#destroy", as: :logout
   root 'home#index'
   resources :restaurants
+  resources :groups
+
+  #get "/create_group" => "groups#new"
+  #post "/create_group" => "groups#create"
 
   #page not found stuff
   get "/page_not_found", to: 'home#page_not_found'

@@ -4,6 +4,8 @@ class AccountController < ApplicationController
   def index
     @restaurant = Restaurant.new
     @restaurants = Restaurant.all
+    @groups = Group.all
+    @group = Group.new
   end
   
 end

@@ -1,0 +1,10 @@
+<%= render 'layouts/logged_in_header' %>
+<h1>New Group</h1>
+<div align = "center">
+<% flash.each do |key, value| %>
+  <div class="alert-temp alert fade in alert-<%= key %>"><%= value %></div>
+<% end %>
+
+<%= render 'form' %>
+
+</div>

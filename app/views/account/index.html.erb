@@ -35,6 +35,30 @@
       <% end %>
     </div>
   </aside>
+  <div class="col-md-8 pull-right">
+  <div align="center" style="border: 2px solid green; border-radius: 25px; padding: 20px">
+      <h2><span class="label label-default">Group List</span></h2>
+      <div align = "center">
+        <% if flash[:group_success] %>
+          <div class="alert-temp alert fade in alert-success"><%= flash[:group_success] %></div>
+        <% end %>
+        <%= render 'groups/form' %>
+      </div>
+      </div>
+      </br>
+      <div align="center" style="border: 2px solid green; border-radius: 25px; padding: 20px">
+      <h2><span class="label label-default">Group List</span></h2>
+      <% @groups.each do |group| %>
+        <%= group.name %> 
+        <%= link_to "delete", group, method: :delete,
+                                       data: { confirm: "You sure?" } %> </br>
+      <% end %>
+      <% if flash[:group_destroy] %>
+          <div class="alert-temp alert fade in alert-info"><%= flash[:group_destroy] %></div>
+        <% end %>
+    </div>
+    </div>
   </div>
+  
   <div class="clearfix"></div>
 </div>
